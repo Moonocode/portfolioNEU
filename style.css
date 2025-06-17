@@ -1,9 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     background-color: black;
     color: white;
     font-family:monospace;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,8 +17,14 @@ body {
     scroll-behavior: smooth;
 }
 
+
 section {
-    height: 100vh;
+    justify-content: center;
+    height: 100vh; /* voller Bildschirm */
+    display: flex;
+    flex-direction: column; /* vertikal stapeln */
+    align-items: center;    /* optional zentrieren */
+    gap: 20px;
 }
 
 h1 {
@@ -29,6 +41,22 @@ h1 {
     gap: 10px;
     align-items: center;
 }
+
+.about_me {
+
+}
+
+.grid-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.grid-4 > * {
+  flex: 1 1 calc(25% - 1rem); /* Bis zu 4 Elemente pro Zeile */
+  box-sizing: border-box;
+}
+
 
 .projects {
     background-color: #2a2a2a;
@@ -53,18 +81,28 @@ h1 {
     box-shadow: #2a2a2a;
 }
 
+.tech-grid {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 10px;
+    grid-template-columns: repeat(4, auto);
+}
+
+.tech-grid > .tech {
+  flex: 1 1 calc(25% - 10px);
+  box-sizing: border-box;
+}
+
 .tech {
     background-color: #2a2a2a;
     display: flex;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
     gap: 10px;
     align-items: center;
     list-style: none;
     border-radius: 10px;
-    height: 25px;
-    width: 85px;
-    float: left;
+    height: 50px;
+    width: 100%;
     transition: transform 0.3s ease;
     border: #5a5a5a;
     border-style: solid;
@@ -78,5 +116,5 @@ h1 {
 .tech_img {
     width:  20px;
     height: 20px;
-    float: left;
+    flex-shrink: 0;
 }
