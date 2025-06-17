@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,13 +18,20 @@ body {
     scroll-behavior: smooth;
 }
 
+canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 
 section {
     justify-content: center;
-    height: 100vh; /* voller Bildschirm */
+    height: 100vh; 
     display: flex;
-    flex-direction: column; /* vertikal stapeln */
-    align-items: center;    /* optional zentrieren */
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
@@ -34,16 +42,19 @@ h1 {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 10px;
-    gap: 10px;
+    justify-content: center;
     align-items: center;
-}
-
-.about_me {
-
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+    gap: 10px;
+    background-color: black;
+    z-index: 1000;
 }
 
 .grid-4 {
@@ -110,7 +121,7 @@ h1 {
 
 .tech:hover {
     background-color: #4a4a4a;
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 .tech_img {
